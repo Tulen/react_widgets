@@ -7,10 +7,31 @@ $watermelon: #F56911;
 $font-stack: 'Raleway', sans-serif;
 
 body {
+  color: #555;
   background-color: $banana;
+  font-family: $font-stack;
+  text-align: center;
+  list-style-type: none;
 }
 
-.widget {
+input {
+  border: none;
+  height: 2em;
+  font-size: 1em;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+.widget__grid {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+
+.widget__item {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,24 +39,23 @@ body {
   height: 25em;
   width: 25em;
   border-radius: 5px;
-  font-family: $font-stack;
   color: white;
   margin: 20px;
+  cursor: pointer;
 }
 
-.widget:nth-child(odd) {
+.widget__item:nth-child(1), .widget__item:nth-child(4) {
   background-color: $lime;
 }
-
-.widget:nth-child(odd):hover {
+.widget__item:nth-child(1):hover, .widget__item:nth-child(4):hover {
   background-color: $grass;
 }
 
-.widget:nth-child(even) {
+.widget__item:nth-child(2), .widget__item:nth-child(3)  {
   background-color: $orange-sherbert;
 }
 
-.widget:nth-child(even):hover {
+.widget__item:nth-child(2):hover, .widget__item:nth-child(3):hover {
   background-color: $watermelon;
 }
 
@@ -43,4 +63,8 @@ body {
   display: flex;
   justify-content: space-around;
   width: 50%;
+}
+
+.auto__display {
+  min-height: 50%;
 }

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Weather = () => {
-  return (
-    <div className="widget">
-      <h1> Weather! </h1>
-    </div>
-  )
+class Weather extends Component {
+  render(){
+    return (
+      <div className="widget__item">
+        <h1> weather </h1>
+      </div>
+    )
+  } 
 }
 
 export default Weather;

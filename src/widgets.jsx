@@ -9,10 +9,10 @@ require('./stylesheets/main.scss');
 
 const Root = () => {
   return (
-  <div> 
+  <div className="widget__grid"> 
     <Clock />
     <Weather />
-    <Auto />
+    <Auto names={["Washington", "Adams", "Jefferson", "Madison", "Monroe"]}/>
     <Tabs />
   </div>
 )

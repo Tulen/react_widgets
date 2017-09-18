@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { PureComponent } from 'react';
 
-class Clock extends Component {
+class Clock extends PureComponent {
   constructor() {
     super();
     this.state = {
@@ -26,15 +26,31 @@ class Clock extends Component {
   }
 
   render() {
+    let ampm;
+    let hours = this.state.time.getHours();
+    let minutes = this.state.time.getMinutes();
+    let seconds = this.state.time.getSeconds();
+    if (hours > 11) {
+      ampm = 'PM';
+      hours = hours - 12;
+    } else {
+      ampm = 'AM';
+    }
+
+    if (minutes < 10) {
+      minutes = `0${minutes}`
+    }
+
     return(
-      <div className="widget"> 
+      <div className="widget__item"> 
         <div className="clock__title"> 
-          <h1> CLOCK </h1>
+          <h1> clock </h1>
         </div>
         <div className="clock__display"> 
-        <h2> {this.state.time.getHours()} </h2>
-        <h2> {this.state.time.getMinutes()} </h2>
-        <h2> {this.state.time.getSeconds()} </h2>
+        <h2> {hours} </h2>
+        <h2> {minutes} </h2>
+        <h2> {seconds} </h2>
+        <h2> {ampm} </h2>
         </div>
       </div>
     )
