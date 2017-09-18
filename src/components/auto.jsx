@@ -6,6 +6,12 @@ class Auto extends PureComponent {
     this.state = {
       inputVal: ''
     }
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    this.setState({ inputVal: e.target.innerHTML });
   }
 
   update(val) {
@@ -24,7 +30,7 @@ class Auto extends PureComponent {
         return name.toLowerCase().includes(this.state.inputVal.toLowerCase())
       })
       .map((name, idx) => {
-        return <li key={name + idx}>{name}</li>
+        return <li key={name + idx} onClick={this.handleClick}>{name}</li>
       });
     
     if (nameList.length == 0) {
