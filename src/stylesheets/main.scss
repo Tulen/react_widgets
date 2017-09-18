@@ -1,0 +1,46 @@
+$lime: #D1F2A5;
+$grass: #4F8C23;
+$banana: #FFFFd4;
+$orange-sherbert: #FFC48C;
+$watermelon: #F56911;
+
+$font-stack: 'Raleway', sans-serif;
+
+body {
+  background-color: $banana;
+}
+
+.widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25em;
+  width: 25em;
+  border-radius: 5px;
+  font-family: $font-stack;
+  color: white;
+  margin: 20px;
+}
+
+.widget:nth-child(odd) {
+  background-color: $lime;
+}
+
+.widget:nth-child(odd):hover {
+  background-color: $grass;
+}
+
+.widget:nth-child(even) {
+  background-color: $orange-sherbert;
+}
+
+.widget:nth-child(even):hover {
+  background-color: $watermelon;
+}
+
+.clock__display {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
