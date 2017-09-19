@@ -13,7 +13,20 @@ const Root = () => {
     <Clock />
     <Weather />
     <Auto names={["Washington", "Adams", "Jefferson", "Madison", "Monroe"]}/>
-    <Tabs />
+    <Tabs values={[
+      {
+        title: '1st',
+        content: 'Tab number one!'
+      },
+      {
+        title: '2nd',
+        content: 'The second tab.'
+      },
+      {
+        title: '3rd',
+        content: 'I"m third...'
+      }
+    ]}/>
   </div>
 )
 }

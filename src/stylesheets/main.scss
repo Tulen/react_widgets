@@ -49,6 +49,9 @@ input:focus {
 }
 .widget__item:nth-child(1):hover, .widget__item:nth-child(4):hover {
   background-color: $grass;
+  .tabs__menu .active--true {
+    border-bottom: 2px solid white;
+  }
 }
 
 .widget__item:nth-child(2), .widget__item:nth-child(3)  {
@@ -67,4 +70,20 @@ input:focus {
 
 .auto__display {
   min-height: 50%;
+}
+
+.tabs__menu {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+}
+
+.tabs__menu div {
+  width: 50px;
+}
+
+
+
+.tabs__body {
+  padding: 15px;
 }

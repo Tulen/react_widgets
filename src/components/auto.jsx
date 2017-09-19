@@ -7,10 +7,10 @@ class Auto extends PureComponent {
       inputVal: ''
     }
 
-    this.handleClick = this.handleClick.bind(this);
+    this.selectName = this.selectName.bind(this);
   }
 
-  handleClick(e) {
+  selectName(e) {
     this.setState({ inputVal: e.target.innerHTML });
   }
 
@@ -30,7 +30,7 @@ class Auto extends PureComponent {
         return name.toLowerCase().includes(this.state.inputVal.toLowerCase())
       })
       .map((name, idx) => {
-        return <li key={name + idx} onClick={this.handleClick}>{name}</li>
+        return <li key={name + idx} onClick={this.selectName}>{name}</li>
       });
     
     if (nameList.length == 0) {
@@ -44,7 +44,7 @@ class Auto extends PureComponent {
           <h1> autocomplete </h1>
         </div>
         <div className="auto__display"> 
-          <input value={this.state.inputVal} onChange={this.update('inputVal')}/>
+          <input placeholder={'Search...'} value={this.state.inputVal} onChange={this.update('inputVal')}/>
           <p> {nameList} </p>
         </div>
       </div>

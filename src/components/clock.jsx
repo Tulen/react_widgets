@@ -41,9 +41,13 @@ class Clock extends PureComponent {
       minutes = `0${minutes}`
     }
 
+    if (seconds < 10) {
+      seconds = `0${seconds}`
+    }
+
     return(
       <div className="widget__item"> 
-        <div className="clock__title"> 
+        <div className="widget__title"> 
           <h1> clock </h1>
         </div>
         <div className="clock__display"> 
